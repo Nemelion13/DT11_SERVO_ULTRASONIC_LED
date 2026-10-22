@@ -25,7 +25,7 @@ class App(ctk.CTk):
         self.statut_connection = ctk.CTkLabel(self.top_frame, text="Statut de la Connexion: Déconnecté")
         self.statut_connection.pack(side="left", padx=10)
 
-        self.theme_menu = ctk.CTkOptionMenu(self.top_frame, values=["Dark", "Light"], command=ctk.set_appearance_mode)
+        self.theme_menu = ctk.CTkOptionMenu(self.top_frame, values=["Light", "Dark"], command=ctk.set_appearance_mode)
         self.theme_menu.pack(side="right", padx=10)
 
         # 2. SENSOR DATA FRAME
@@ -80,7 +80,6 @@ class App(ctk.CTk):
         
         threading.Thread(
             target=self.serial_manager.connect_serial,
-            kwargs={"port": "COM4"},
             daemon=True,
         ).start()
         self.update_gui()

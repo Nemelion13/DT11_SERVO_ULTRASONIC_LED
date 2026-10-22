@@ -449,6 +449,7 @@ class SerialManager:
 
         self.port = port
         self.baudrate = baudrate
+        print(self.port)
 
         try:
             previous_connection = self.ser
@@ -500,6 +501,8 @@ class SerialManager:
     def find_arduino_port(self):
         """Cherche automatiquement le port de l'Arduino"""
         ports = serial.tools.list_ports.comports()
+       
+        
         
         for port in ports:
             # Vérifier les caractéristiques typiques d'Arduino
