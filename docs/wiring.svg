@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">Schéma de raccordement Arduino Uno et composants du projet</title>
+  <desc id="desc">Tableau illustré des connexions Arduino pour le DHT11, HC-SR04, servo, deux LED et un buzzer, avec les alimentations et masses communes.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4f7fb; }
+      .board { fill: #176b58; stroke: #10483d; stroke-width: 4; }
+      .panel { fill: #ffffff; stroke: #c7d2df; stroke-width: 2; }
+      .pin { fill: #e8eef5; stroke: #263548; stroke-width: 1.5; }
+      .title { font: bold 28px Arial, sans-serif; fill: #142235; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #40536a; }
+      .boardtitle { font: bold 22px Arial, sans-serif; fill: #ffffff; }
+      .label { font: bold 17px Arial, sans-serif; fill: #142235; }
+      .body { font: 15px Arial, sans-serif; fill: #263548; }
+      .small { font: 14px Arial, sans-serif; fill: #40536a; }
+      .pintext { font: bold 14px Arial, sans-serif; fill: #142235; }
+      .head { font: bold 15px Arial, sans-serif; fill: #142235; }
+      .signal { fill: #2878d0; }
+      .power { fill: #db3f3f; }
+      .ground { fill: #333b46; }
+      .divider { stroke: #d8e0e9; stroke-width: 1; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="850" rx="18"/>
+  <text class="title" x="40" y="48">Câblage — Arduino Uno et composants du projet</text>
+  <text class="subtitle" x="40" y="76">Correspondance des broches définies dans DHT11_SERVO_ULTRASONIC_LED.ino • Exemple pour carte 5 V</text>
+
+  <rect class="board" x="40" y="112" width="280" height="580" rx="24"/>
+  <text class="boardtitle" x="180" y="150" text-anchor="middle">ARDUINO UNO</text>
+  <text class="small" x="180" y="174" text-anchor="middle" fill="#ffffff">Connecteurs numériques et alimentation</text>
+  <text class="body" x="75" y="213" fill="#ffffff">Broches numériques</text>
+
+  <rect class="pin" x="80" y="232" width="95" height="32" rx="5"/><text class="pintext" x="127" y="253" text-anchor="middle">D11</text>
+  <rect class="pin" x="80" y="273" width="95" height="32" rx="5"/><text class="pintext" x="127" y="294" text-anchor="middle">D6</text>
+  <rect class="pin" x="80" y="314" width="95" height="32" rx="5"/><text class="pintext" x="127" y="335" text-anchor="middle">D7</text>
+  <rect class="pin" x="80" y="355" width="95" height="32" rx="5"/><text class="pintext" x="127" y="376" text-anchor="middle">D8</text>
+  <rect class="pin" x="80" y="396" width="95" height="32" rx="5"/><text class="pintext" x="127" y="417" text-anchor="middle">D4</text>
+  <rect class="pin" x="80" y="437" width="95" height="32" rx="5"/><text class="pintext" x="127" y="458" text-anchor="middle">D2</text>
+  <rect class="pin" x="80" y="478" width="95" height="32" rx="5"/><text class="pintext" x="127" y="499" text-anchor="middle">D9</text>
+  <text class="body" x="75" y="548" fill="#ffffff">Alimentation</text>
+  <rect class="pin" x="80" y="565" width="95" height="32" rx="5"/><text class="pintext" x="127" y="586" text-anchor="middle">5 V</text>
+  <rect class="pin" x="80" y="606" width="95" height="32" rx="5"/><text class="pintext" x="127" y="627" text-anchor="middle">GND</text>
+  <text class="small" x="180" y="668" text-anchor="middle" fill="#ffffff">USB vers le PC • 9600 bauds</text>
+
+  <rect class="panel" x="350" y="112" width="810" height="580" rx="16"/>
+  <text class="head" x="380" y="151">BROCHE ARDUINO</text>
+  <text class="head" x="610" y="151">FIL</text>
+  <text class="head" x="690" y="151">VERS LE COMPOSANT</text>
+  <line class="divider" x1="375" y1="166" x2="1135" y2="166"/>
+
+  <circle class="signal" cx="397" cy="195" r="7"/>
+  <text class="body" x="420" y="200">D11</text><text class="body" x="610" y="200" fill="#2878d0">Signal</text><text class="body" x="690" y="200">DHT11 — DATA / OUT</text>
+  <line class="divider" x1="375" y1="214" x2="1135" y2="214"/>
+
+  <circle class="signal" cx="397" cy="239" r="7"/>
+  <text class="body" x="420" y="244">D6</text><text class="body" x="610" y="244" fill="#2878d0">Signal</text><text class="body" x="690" y="244">HC-SR04 — TRIG</text>
+  <line class="divider" x1="375" y1="258" x2="1135" y2="258"/>
+
+  <circle class="signal" cx="397" cy="283" r="7"/>
+  <text class="body" x="420" y="288">D7</text><text class="body" x="610" y="288" fill="#2878d0">Signal</text><text class="body" x="690" y="288">HC-SR04 — ECHO (entrée Arduino)</text>
+  <line class="divider" x1="375" y1="302" x2="1135" y2="302"/>
+
+  <circle class="signal" cx="397" cy="327" r="7"/>
+  <text class="body" x="420" y="332">D8</text><text class="body" x="610" y="332" fill="#2878d0">Signal</text><text class="body" x="690" y="332">Résistance 220–330 Ω → anode LED pilotée par Python</text>
+  <line class="divider" x1="375" y1="346" x2="1135" y2="346"/>
+
+  <circle class="signal" cx="397" cy="371" r="7"/>
+  <text class="body" x="420" y="376">D4</text><text class="body" x="610" y="376" fill="#2878d0">Signal</text><text class="body" x="690" y="376">Résistance 220–330 Ω → anode LED d'alerte</text>
+  <line class="divider" x1="375" y1="390" x2="1135" y2="390"/>
+
+  <circle class="signal" cx="397" cy="415" r="7"/>
+  <text class="body" x="420" y="420">D2</text><text class="body" x="610" y="420" fill="#2878d0">Signal</text><text class="body" x="690" y="420">Buzzer passif — borne signal (+)</text>
+  <line class="divider" x1="375" y1="434" x2="1135" y2="434"/>
+
+  <circle class="signal" cx="397" cy="459" r="7"/>
+  <text class="body" x="420" y="464">D9</text><text class="body" x="610" y="464" fill="#2878d0">Signal</text><text class="body" x="690" y="464">Servo — fil signal</text>
+  <line class="divider" x1="375" y1="478" x2="1135" y2="478"/>
+
+  <circle class="power" cx="397" cy="503" r="7"/>
+  <text class="body" x="420" y="508">5 V</text><text class="body" x="610" y="508" fill="#db3f3f">Rouge</text><text class="body" x="690" y="508">VCC du DHT11 et du HC-SR04</text>
+  <line class="divider" x1="375" y1="522" x2="1135" y2="522"/>
+
+  <circle class="ground" cx="397" cy="547" r="7"/>
+  <text class="body" x="420" y="552">GND</text><text class="body" x="610" y="552" fill="#333b46">Noir</text><text class="body" x="690" y="552">GND des capteurs, LED (cathodes), buzzer (−) et servo</text>
+  <line class="divider" x1="375" y1="566" x2="1135" y2="566"/>
+
+  <circle class="power" cx="397" cy="591" r="7"/>
+  <text class="body" x="420" y="596">Alim. ext.</text><text class="body" x="610" y="596" fill="#db3f3f">Rouge</text><text class="body" x="690" y="596">+5 V vers VCC servo si alimentation dédiée</text>
+  <line class="divider" x1="375" y1="610" x2="1135" y2="610"/>
+
+  <circle class="ground" cx="397" cy="635" r="7"/>
+  <text class="body" x="420" y="640">GND ext.</text><text class="body" x="610" y="640" fill="#333b46">Noir</text><text class="body" x="690" y="640">Relier au GND Arduino : toutes les masses doivent être communes</text>
+
+  <rect class="panel" x="40" y="715" width="1120" height="95" rx="14"/>
+  <text class="label" x="65" y="748">À vérifier avant mise sous tension</text>
+  <text class="small" x="65" y="775">• Chaque LED a sa résistance en série. Un DHT11 nu nécessite un pull-up d'environ 10 kΩ entre DATA et VCC.</text>
+  <text class="small" x="65" y="798">• Servo : alimentation 5 V dimensionnée, masse commune. Carte 3,3 V : adapter le niveau du signal ECHO du HC-SR04.</text>
+</svg>

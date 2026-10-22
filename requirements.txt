@@ -1,0 +1,3 @@
+customtkinter>=2.0.0
+Pillow>=1.0.0
+pyserial>=3.5
